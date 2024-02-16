@@ -1,8 +1,8 @@
 {
-  "name": "@ltonetwork/ownable-sdk",
+  "name": "@stiemsdev/ownables-demo",
   "version": "0.1.0",
   "license": "MIT",
-  "description": "Development tools for LTO Ownables",
+  "description": "Demo for LTO Ownables",
   "homepage": "https://stiemsdev.github.io/ownables-demo/",
   "dependencies": {
     "@emotion/react": "^11.10.6",
@@ -57,7 +57,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ltonetwork/ownable-sdk.git"
+    "url": "git+https://github.com/stiemsdev/ownables-demo.git"
   },
   "keywords": [
     "webassembly",
