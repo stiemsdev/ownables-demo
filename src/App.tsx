@@ -169,6 +169,7 @@ export default function App() {
     }
   };
 
+  
   return <>
     <AppToolbar onMenuClick={() => setShowSidebar(true)} />
     <Tabs
