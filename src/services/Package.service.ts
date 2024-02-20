@@ -16,6 +16,7 @@ const examples: TypedPackageStub[] = exampleUrl ? [
   { title: 'Potion', name: 'ownable-potion', description: 'Drink a colorful potion', stub: true },
   { title: 'Robot', name: 'ownable-robot', description: 'An adorable robot companion', stub: true },
   { title: 'Speakers', name: 'ownable-speakers', description: 'Add-on for Robot', stub: true },
+  { title: 'Taytay', name: 'ownable-taytay', description: 'Thank you Swifties for all your love and support', stub: true },
 ] : [];
 export const HAS_EXAMPLES = exampleUrl !== '';
 

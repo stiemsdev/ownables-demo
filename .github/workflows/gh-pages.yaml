@@ -25,6 +25,7 @@ jobs:
           - stormOfColors5
           - stormOfColors14
           - verticalFlippedApes
+          - taytay
     concurrency: ci-${{ github.ref }}-${{ matrix.package }}
     runs-on: ubuntu-latest
     steps:
