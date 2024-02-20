@@ -76,7 +76,7 @@ jobs:
           cp ownables/**/*.zip public/ownables
       - name: Build
         env:
-          REACT_APP_OWNABLE_EXAMPLES_URL: /ownables
+          REACT_APP_OWNABLE_EXAMPLES_URL: ownables
         run: npm run build
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
