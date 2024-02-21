@@ -28,6 +28,7 @@ function flipImage(index){
         var seconds = Math.floor(audio.duration % 60);
         totalTime.textContent = minutes + ':' + (seconds < 10 ? '0' : '') + seconds;
       });
+      console.log(audio.duration);
     
       audio.addEventListener('timeupdate', function() {
         progressBar.value = audio.currentTime;
