@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/ownables-demo/static/css/main.5b185b6a.css",
-    "main.js": "/ownables-demo/static/js/main.6c33dd03.js",
+    "main.js": "/ownables-demo/static/js/main.57935460.js",
     "static/js/529.9ddc6a1a.chunk.js": "/ownables-demo/static/js/529.9ddc6a1a.chunk.js",
     "static/media/montserrat-all-700-normal.woff": "/ownables-demo/static/media/montserrat-all-700-normal.168d5b114e5a6d216802.woff",
     "static/media/montserrat-all-500-normal.woff": "/ownables-demo/static/media/montserrat-all-500-normal.124bdbbc44b5aae423df.woff",
@@ -34,11 +34,11 @@
     "static/media/background.svg": "/ownables-demo/static/media/background.63e7f18a9804bd3861eed21469656f14.svg",
     "index.html": "/ownables-demo/index.html",
     "main.5b185b6a.css.map": "/ownables-demo/static/css/main.5b185b6a.css.map",
-    "main.6c33dd03.js.map": "/ownables-demo/static/js/main.6c33dd03.js.map",
+    "main.57935460.js.map": "/ownables-demo/static/js/main.57935460.js.map",
     "529.9ddc6a1a.chunk.js.map": "/ownables-demo/static/js/529.9ddc6a1a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.5b185b6a.css",
-    "static/js/main.6c33dd03.js"
+    "static/js/main.57935460.js"
   ]
 }
