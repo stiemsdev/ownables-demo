@@ -16,14 +16,12 @@ jobs:
           - antenna
           - armor
           - car
+          - cookie
           - paint
           - potion
           - robot
           - speakers
-          - dreamgirl
           - storiedApes
-          - stormOfColors5
-          - stormOfColors14
           - verticalFlippedApes
           - taytay
     concurrency: ci-${{ github.ref }}-${{ matrix.package }}
