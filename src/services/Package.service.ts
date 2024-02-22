@@ -18,8 +18,8 @@ const examples: TypedPackageStub[] = exampleUrl ? [
   { title: 'Speakers', name: 'ownable-speakers', description: 'Add-on for Robot', stub: true },
   { title: 'Taytay', name: 'ownable-taytay', description: 'Thank you Swifties for all your love and support', stub: true },
   { title: 'Cookie', name: 'ownable-cookie', description: 'A delicious cookie', stub: true },
-  { title: 'StoriedApes', name: 'ownable-storied_apes', description: 'Storied Apes Legacy', stub: true },
-  {title: 'Flipped apes', name: 'ownable-flipped_apes', description: 'Vertical flipped apes', stub: true},
+  { title: 'StoriedApes', name: 'ownable-storiedApes', description: 'Storied Apes Legacy', stub: true },
+  {title: 'Flipped apes', name: 'ownable-flippedApes', description: 'Vertical flipped apes', stub: true},
 ] : [];
 export const HAS_EXAMPLES = exampleUrl !== '';
 
