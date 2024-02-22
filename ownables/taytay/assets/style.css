@@ -1,8 +1,6 @@
 @font-face {
   font-family: 'Montserrat';
   src: url('Montserrat-VariableFont_wght.ttf') format('woff');
-  /* font-weight: normal;
-  font-style: normal; */
 }
 
 html, body {
@@ -20,10 +18,8 @@ html, body {
 
 #image-container {
   position: relative;
-  width: 300px;
-  /* Adjust size as needed */
-  height: 300px;
-  /* Adjust size as needed */
+  width: 280px;
+  height: 280px;
   perspective: 1000px;
 }
 
