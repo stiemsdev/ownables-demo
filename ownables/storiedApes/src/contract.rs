@@ -8,7 +8,7 @@ use crate::state::{NFT_ITEM, CONFIG, METADATA, LOCKED, PACKAGE_CID, OWNABLE_INFO
 use ownable_std::{address_eip155, address_lto, ExternalEventMsg, InfoResponse, Metadata, OwnableInfo};
 
 // version info for migration info
-const CONTRACT_NAME: &str = "crates.io:ownable-storiedApes";
+const CONTRACT_NAME: &str = "crates.io:ownable-storied_apes";
 const CONTRACT_VERSION: &str = env!("CARGO_PKG_VERSION");
 
 pub fn instantiate(
