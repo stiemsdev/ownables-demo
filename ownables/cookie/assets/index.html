@@ -46,7 +46,7 @@
             cursor: not-allowed;
           }
           #cookie1{
-            display: inline-block;
+            display: none;
           }
           #cookie2{
             display: none;
@@ -88,9 +88,30 @@
             console.log("current", current_amount);
           });
 
+          if (current_amount=== 0)
+              {
+                cookie1.style.display = "inline-block";
+              }
+          if (current_amount=== 1)
+              {
+                // cookie1.style.display = "none";
+                cookie2.style.display = "inline-block";
+              }
+              if(current_amount === 2)
+              {
+                // cookie2.style.display = "none";
+                cookie3.style.display = "inline-block";
+              }
+              if (current_amount === 3) {
+                button.disabled = true;
+                button.textContent = "No cookies here";
+                // cookie3.style.display = "none";
+                cookie4.style.display = "inline-block";
+              }
+
           function consume() {
             console.log("start current", current_amount);
-            if (current_amount >= 0) {
+            if (current_amount >= 0 && current_amount < 3) {
               current_amount++;
               console.log("new current", current_amount);
               if (current_amount=== 1)
