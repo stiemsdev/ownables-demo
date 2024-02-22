@@ -79,6 +79,25 @@
           var cookie3 = document.getElementById("cookie3");
           var cookie4 = document.getElementById("cookie4");
 
+          function updateTemplate(current_amount) {
+            console.log("current amount in update template", current_amount);
+            if (current_amount === 0) {
+            cookie1.style.display = "inline-block";
+            } else if (current_amount === 1) {
+              cookie2.style.display = "inline-block";
+            } else if (current_amount === 2) {
+              cookie3.style.display = "inline-block";
+            } else if (current_amount === 3) {
+              button.disabled = true;
+              button.textContent = "No cookies here";
+              cookie4.style.display = "inline-block";
+            }
+
+        // document.getElementsByClassName('amount')[0].textContent = amt;
+
+        // setTimeout(() => document.body.classList.add('in'), 500);
+      }
+
            window.addEventListener("message", (event) => {
             ownable_id = event.data.ownable_id;
             console.log("ownable_id", ownable_id);
@@ -86,17 +105,18 @@
             console.log("state", state);
             current_amount = state.current_amount;
             console.log("current amount", current_amount);
-            if (current_amount === 0) {
-            cookie1.style.display = "inline-block";
-          } else if (current_amount === 1) {
-            cookie2.style.display = "inline-block";
-          } else if (current_amount === 2) {
-            cookie3.style.display = "inline-block";
-          } else if (current_amount === 3) {
-            button.disabled = true;
-            button.textContent = "No cookies here";
-            cookie4.style.display = "inline-block";
-          }
+            updateTemplate(current_amount);
+          //   if (current_amount === 0) {
+          //   cookie1.style.display = "inline-block";
+          // } else if (current_amount === 1) {
+          //   cookie2.style.display = "inline-block";
+          // } else if (current_amount === 2) {
+          //   cookie3.style.display = "inline-block";
+          // } else if (current_amount === 3) {
+          //   button.disabled = true;
+          //   button.textContent = "No cookies here";
+          //   cookie4.style.display = "inline-block";
+          // }
           });
 
         //   window.addEventListener("load", () => {
