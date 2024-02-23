@@ -57,12 +57,19 @@
           #cookie4{
             display: none;
           }
+          #cookies {
+            display: none;
+          }
+          #eat-button {
+            display: none;
+          }
         </style>
       </head>
       <body>
-        <div class="cookie-container">
+        <div id="cookies" class="cookie-container">
           <img id="cookie1" class="cookie-image" src="whole_cookie.png" alt="Whole Cookie">
-          <img id="cookie2" class="cookie-image" src="half_cookie.png" alt="Half Cookie">
+          <img id="cookie
+          2" class="cookie-image" src="half_cookie.png" alt="Half Cookie">
           <img id="cookie3" class="cookie-image" src="quarter_cookie.png" alt="Quarter Cookie">
           <img id="cookie4" class="cookie-image" src="no_cookie.png" alt="No Cookie">
           <button id="eat-button" class="cookie-button">Nom Nom Nom</button>
@@ -73,8 +80,8 @@
           let current_amount;
 
           window.onload = function() {
-              var img = document.getElementById('myImage');
-              var btn = document.getElementById('myButton');
+              var img = document.getElementById("cookies");
+              var btn = document.getElementById("eat-button");
 
               img.style.display = "block"; // Show the image
 
@@ -84,7 +91,7 @@
                   }, 1000); // 2000 milliseconds = 2 seconds
               };
           };
-          
+
           document.getElementById("eat-button").addEventListener('click', () => consume());
 
           var button = document.querySelector(".cookie-button");
