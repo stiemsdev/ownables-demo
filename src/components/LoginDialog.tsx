@@ -29,7 +29,7 @@ function CreateAccount(props: {next: () => void; onImport: () => void}) {
     props.next();
   }
 
-  return <Card style={{...cardStyle, position: 'relative',zIndex: 3000 }}>
+  return <Card style={cardStyle}>
     <CardMedia sx={{ height: 200 }} image={bgImage} />
     <CardContent style={{textAlign: "center"}}>
       <h1 style={{marginTop: 6, marginBottom: 0}}>Ownable SDK Wallet</h1>
