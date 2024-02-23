@@ -8,6 +8,7 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
+  max-width: 100vw;
 }
 
 div::-webkit-scrollbar {
