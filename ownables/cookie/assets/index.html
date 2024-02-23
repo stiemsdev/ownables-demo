@@ -71,6 +71,20 @@
         <script>
           let ownable_id;
           let current_amount;
+
+          window.onload = function() {
+              var img = document.getElementById('myImage');
+              var btn = document.getElementById('myButton');
+
+              img.style.display = "block"; // Show the image
+
+              img.onload = function() {
+                  setTimeout(function() {
+                      btn.style.display = "block"; // Show the button after a delay
+                  }, 1000); // 2000 milliseconds = 2 seconds
+              };
+          };
+          
           document.getElementById("eat-button").addEventListener('click', () => consume());
 
           var button = document.querySelector(".cookie-button");
