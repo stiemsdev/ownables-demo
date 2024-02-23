@@ -57,9 +57,6 @@
           #cookie4{
             display: none;
           }
-          #cookies {
-            display: none;
-          }
           #eat-button {
             display: none;
           }
@@ -79,19 +76,6 @@
           let ownable_id;
           let current_amount;
 
-          window.onload = function() {
-              var img = document.getElementById("cookies");
-              var btn = document.getElementById("eat-button");
-
-              img.style.display = "block"; // Show the image
-
-              img.onload = function() {
-                  setTimeout(function() {
-                      btn.style.display = "block"; // Show the button after a delay
-                  }, 1000); // 2000 milliseconds = 2 seconds
-              };
-          };
-
           document.getElementById("eat-button").addEventListener('click', () => consume());
 
           var button = document.querySelector(".cookie-button");
@@ -103,9 +87,19 @@
           function updateTemplate(current_amount) {
             console.log("current amount in update template", current_amount);
             if (current_amount === 0) {
-            cookie1.style.display = "inline-block";
+              cookie1.style.display = "inline-block";
+              cookie1.onload = function() {
+                setTimeout(function() {
+                button.style.display = "block"; // Show the button after a delay
+                }, 500);
+              }
             } else if (current_amount === 1) {
               cookie2.style.display = "inline-block";
+              cookie2.onload = function() {
+                setTimeout(function() {
+                button.style.display = "block"; // Show the button after a delay
+                }, 500);
+              }
             } else if (current_amount === 2) {
               cookie3.style.display = "inline-block";
             } else if (current_amount === 3) {
