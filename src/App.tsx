@@ -52,6 +52,16 @@ export default function App() {
     .then(() => setLoaded(true))
   }, []);
 
+  useEffect(() => {
+    // Disable horizontal scrolling when component mounts
+    document.body.style.overflowX = 'hidden';
+
+    // Re-enable horizontal scrolling when component unmounts
+    return () => {
+      document.body.style.overflowX = 'auto';
+    };
+  }, []);
+
   const showError = (title: string, message: string) => {
     setAlert({severity: "error", title, message});
   }

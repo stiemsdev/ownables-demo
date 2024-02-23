@@ -50,4 +50,47 @@ function flipImage(index){
           playButton.innerHTML = '&#x25B6;';
         }
       });
+
+      document.addEventListener('DOMContentLoaded', function() {
+        var audio = document.getElementById('myAudio');
+        var playButton = document.getElementById('playButton');
+        var progressBar = document.getElementById('progressBar');
+        var currentTime = document.getElementById('currentTime');
+        var totalTime = document.getElementById('totalTime');
+      
+        // Lazy load the audio file
+        const audioSource = document.createElement('source');
+        audioSource.src = 'Taylor Swift - Cruel Summer.mp3';
+        audioSource.type = 'audio/mpeg';
+        audio.appendChild(audioSource);
+      
+        // Preload metadata
+        audio.addEventListener('loadedmetadata', function() {
+          progressBar.max = audio.duration;
+          var minutes = Math.floor(audio.duration / 60);
+          var seconds = Math.floor(audio.duration % 60);
+          totalTime.textContent = minutes + ':' + (seconds < 10 ? '0' : '') + seconds;
+        });
+      
+        audio.addEventListener('timeupdate', function() {
+          progressBar.value = audio.currentTime;
+          var minutes = Math.floor(audio.currentTime / 60);
+          var seconds = Math.floor(audio.currentTime % 60);
+          currentTime.textContent = minutes + ':' + (seconds < 10 ? '0' : '') + seconds;
+        });
+      
+        progressBar.addEventListener('input', function() {
+          audio.currentTime = progressBar.value;
+        });
+      
+        playButton.addEventListener('click', function() {
+          if (audio.paused) {
+            audio.play();
+            playButton.innerHTML = '&#x23F8;';
+          } else {
+            audio.pause();
+            playButton.innerHTML = '&#x25B6;';
+          }
+        });
+      });
   
