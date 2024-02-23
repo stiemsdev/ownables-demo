@@ -33,6 +33,7 @@
           }
 
           .cookie-button {
+            display: none;
             padding: 10px 20px;
             font-size: 18px;
             background-color: #4CAF50;
@@ -65,8 +66,7 @@
       <body>
         <div id="cookies" class="cookie-container">
           <img id="cookie1" class="cookie-image" src="whole_cookie.png" alt="Whole Cookie">
-          <img id="cookie
-          2" class="cookie-image" src="half_cookie.png" alt="Half Cookie">
+          <img id="cookie2" class="cookie-image" src="half_cookie.png" alt="Half Cookie">
           <img id="cookie3" class="cookie-image" src="quarter_cookie.png" alt="Quarter Cookie">
           <img id="cookie4" class="cookie-image" src="no_cookie.png" alt="No Cookie">
           <button id="eat-button" class="cookie-button">Nom Nom Nom</button>
@@ -88,13 +88,10 @@
             console.log("current amount in update template", current_amount);
             if (current_amount === 0) {
               cookie1.style.display = "inline-block";
-              // cookie1.onload = function() {
-              //   setTimeout(function() {
-              //   button.style.display = "block"; // Show the button after a delay
-              //   }, 500);
-              // }
+              // button.style.display = "block"; 
             } else if (current_amount === 1) {
               cookie2.style.display = "inline-block";
+              // button.style.display = "block"; 
               // cookie2.onload = function() {
               //   setTimeout(function() {
               //   button.style.display = "block"; // Show the button after a delay
@@ -102,12 +99,15 @@
               // }
             } else if (current_amount === 2) {
               cookie3.style.display = "inline-block";
+              // button.style.display = "block"; 
             } else if (current_amount === 3) {
               button.disabled = true;
+              // button.style.display = "block"; 
               button.textContent = "No cookies here";
               cookie4.style.display = "inline-block";
             }
-            setTimeout(() => document.body.classList.add('in'), 500);
+            button.style.display = "block"; 
+            // setTimeout(() => document.body.classList.add('in'), 500);
           }
 
            window.addEventListener("message", (event) => {
