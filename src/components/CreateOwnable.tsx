@@ -32,10 +32,6 @@ interface Ownable {
     image: File | null;
 }
 
-interface readyOwnable {
-    name: string;
-    status: string;
-}
 
 export default function CreateOwnable(props: CreateOwnableProps) {
     const { open, onClose } = props;
