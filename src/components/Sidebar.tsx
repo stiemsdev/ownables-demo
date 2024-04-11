@@ -29,10 +29,11 @@ interface SidebarProps {
   onLogout: () => void;
   onReset: () => void;
   onFactoryReset: () => void;
+  onCreate: () => void;
 }
 
 export default function Sidebar(props: SidebarProps) {
-  const {open, onClose, onLogout, onReset, onFactoryReset} = props;
+  const {open, onClose, onLogout, onReset, onFactoryReset, onCreate} = props;
   const [anchoring, setAnchoring] = useState(EventChainService.anchoring);
   const [showNoBalance, setShowNoBalance] = useState(false);
   const address = LTOService.address;
@@ -96,9 +97,13 @@ export default function Sidebar(props: SidebarProps) {
             </Link>
           </Typography>
         </Box>
-      </Box>
+        <Box component="div" sx={{mt: 2}}>
+          <Button variant="contained" fullWidth sx={{mt: 2}} color="success" onClick={onCreate}>Create Ownable</Button>
+        </Box>
+      </Box> 
 
       <Box component="div" sx={{ flexGrow: 1 }}></Box>
+      
 
       <Box sx={{ width: 350, p: 2 }} role="presentation">
         <FormGroup>

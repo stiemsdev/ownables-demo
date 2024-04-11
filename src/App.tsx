@@ -27,6 +27,7 @@ import { SnackbarProvider, enqueueSnackbar } from 'notistack';
 import {TypedOwnableInfo} from "./interfaces/TypedOwnableInfo";
 import Tabs, { tabsClasses } from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
+import CreateOwnable from './components/CreateOwnable';
 
 export default function App() {
   const [loaded, setLoaded] = useState(false);
@@ -41,6 +42,8 @@ export default function App() {
   const [ownablesFromStorage, setOwnablesFromStorage] = useState<Array<{chain: EventChain, package: string, keywords:string[]}>>([]);
   const [confirm, setConfirm] =
     useState<{title: string, message: React.ReactNode, severity?: AlertColor, ok?: string, onConfirm: () => void}|null>(null);
+  // const [currentScreen, setCurrentScreen] = useState('main');
+  const [showCreate, setShowCreate] = useState(false);
 
   useEffect(() => {
     IDBService.open()
@@ -182,6 +185,7 @@ export default function App() {
   
   return <>
     <AppToolbar onMenuClick={() => setShowSidebar(true)} />
+    <Button onClick={() => setShowCreate(true)}>Create Ownable</Button>
     <Tabs
         value={value}
         onChange={handleChange}
@@ -221,6 +225,7 @@ export default function App() {
           <Typography variant="subtitle1" color="text.secondary" textAlign="center" sx={{mt: 2}}>
             Read <Link href="https://docs.ltonetwork.com/ownables/what-are-ownables" target="_blank">the documentation</Link> to learn how to issue an Ownable
             <If condition={HAS_EXAMPLES}><br />or try one of <Link component="button" onClick={() => setShowPackages(true)} style={{fontSize: 'inherit'}}>the examples</Link></If>.
+            You can also <Link component="button" onClick={() => setShowCreate(true)} style={{fontSize: 'inherit'}}>create your own</Link>.
           </Typography>
         </Grid>
       </Grid>
@@ -250,6 +255,22 @@ export default function App() {
       )}
     </Grid>
 
+          {/* <ButtonGroup>
+          <PackagesFab
+            open={showPackages}
+            onOpen={() => setShowPackages(true)}
+            onClose={() => setShowPackages(false)}
+            onSelect={forge}
+            onError={showError}
+          />
+          <CreateOwnable
+            open={showCreate}
+            onClose={()=> setShowCreate(false)}
+          />
+          <Button onClick={() => setShowCreate(true)}>Create Ownable</Button>
+          </ButtonGroup> */}
+
+
     <PackagesFab
       open={showPackages}
       onOpen={() => setShowPackages(true)}
@@ -257,14 +278,19 @@ export default function App() {
       onSelect={forge}
       onError={showError}
     />
-
     <Sidebar
       open={showSidebar}
       onClose={() => setShowSidebar(false)}
       onLogout={logout}
       onReset={reset}
       onFactoryReset={factoryReset}
+      onCreate={() => {setShowCreate(true); setShowSidebar(false)}}
     />
+    <CreateOwnable 
+      open={showCreate} 
+      onClose={() => setShowCreate(false)} 
+    />
+
     <LoginDialog key={address} open={loaded && showLogin} onLogin={onLogin} />
 
     <HelpDrawer open={consuming !== null}>

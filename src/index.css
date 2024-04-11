@@ -47,3 +47,23 @@ pre.base64 {
     transform:translateY(-20px);
   }
 }
+
+div.react-tag-input {
+  border: none;
+}
+
+div.react-tag-input__tag {
+  background-color: transparent;
+  border: 1px solid #000;
+  border-radius: 5px;
+}
+
+div.react-tag-input__tag__remove {
+  border: none;
+  background-color: transparent;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  line-height: 15px;
+  margin-left: 5px;
+}
