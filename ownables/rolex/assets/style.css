@@ -23,7 +23,8 @@ html, body {
   justify-content: center;
   align-items: center;
   border-radius: 20px; 
-  padding-top: 30px;
+  padding-top: 20px;
+  padding-bottom: 10px;
   position: relative;
   width: 250px;
   height: 250px;
