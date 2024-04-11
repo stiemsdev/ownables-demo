@@ -14,12 +14,15 @@ html, body {
   align-items: center;
   justify-content: center;
   height: 100vh;
+  /* background-color: rgb(253, 251, 251); */
+
 }
 
 #image-container {
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 20px; 
   padding-top: 30px;
   position: relative;
   width: 250px;
@@ -35,6 +38,7 @@ html, body {
   backface-visibility: hidden;
   transition: transform 0.5s ease;
   cursor: pointer;
+  background-color: #717171;
 }
 
 #image-container img.flipped {
@@ -59,5 +63,10 @@ html, body {
 
 .active {
   background-color: #717171;
+}
+
+#image, #second-image {
+  border-radius: 20px;
+  border: 0.1px solid lightgrey;
 }
 
