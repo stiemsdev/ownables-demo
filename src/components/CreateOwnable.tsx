@@ -13,11 +13,7 @@ import useInterval from '../utils/useInterval';
 import Dialog from "@mui/material/Dialog";
 import JSZip from 'jszip';
 
-import axios from 'axios';
-
 import heic2any from 'heic2any';
-
-import { WithContext as ReactTags } from 'react-tag-input';
 
 interface CreateOwnableProps {
     open: boolean;
@@ -57,7 +53,7 @@ export default function CreateOwnable(props: CreateOwnableProps) {
         network: '',
         image: null,
     });
-    const [ownables, setOwnables] = useState<readyOwnable[]>([]);
+    // const [ownables, setOwnables] = useState<readyOwnable[]>([]);
 
     // useEffect(() => {
     //     // Fetch the list of importable ownables from the API
@@ -382,7 +378,7 @@ export default function CreateOwnable(props: CreateOwnableProps) {
                         )}
                         {activeTab === 'import' && (
                         <div>
-                            {ownables.length === 0 && (
+                            {/* {ownables.length === 0 && (
                             <div>
                                 <br></br>No ownables for import yet<br></br>
                                 Build your first one
@@ -394,7 +390,7 @@ export default function CreateOwnable(props: CreateOwnableProps) {
                                 <span>{readyOwnable.status}</span>
                                 <button>Download</button>
                             </div>
-                            ))}
+                            ))} */}
                         </div>
                         )}
                     </Box>
