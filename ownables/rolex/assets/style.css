@@ -71,3 +71,13 @@ html, body {
   border: 0.1px solid lightgrey;
 }
 
+@media (max-width: 200px) {
+  #image, #second-image {
+    width: 100%;
+    height: auto;
+  }
+  .dot {
+    display: none;
+  }
+}
+
