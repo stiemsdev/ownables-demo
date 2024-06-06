@@ -59,6 +59,9 @@ export default function CreateOwnable(props: CreateOwnableProps) {
     //         .then((data) => setOwnables(data));
     // }, []);
 
+    const ethWalletAddress = LTOService.ethAddress;
+    console.log("ethWalletAddress", ethWalletAddress);
+
     const loadBalance = () => {
         if (!LTOService.isUnlocked()) return;
     

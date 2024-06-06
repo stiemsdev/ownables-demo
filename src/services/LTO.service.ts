@@ -10,6 +10,7 @@ const sessionSeed = SessionStorageService.get('@seed');
 export default class LTOService {
   public static readonly networkId = lto.networkId;
   private static _account?: Account = sessionSeed ? lto.account({seed: sessionSeed}) : undefined;
+  private static _ethAccount?: Account = sessionSeed ? lto.account({ keyType: 'secp256k1', derivationPath: `m/44'/60'/0'/0`}): undefined;
 
   public static accountExists(): boolean {
     return !!LocalStorageService.get('@accountData');
@@ -46,6 +47,17 @@ export default class LTOService {
 
     return '';
   }
+
+  public static get ethAddress(): string {
+    if (!!this._ethAccount) return this._ethAccount!.getAddressOnNetwork('ethereum');
+    console.log('ethAdress', this._ethAccount);
+
+    const [encryptedAccount] = LocalStorageService.get('@accountData') || [];
+    if (encryptedAccount) return encryptedAccount.address;
+
+    return '';
+  }
+
 
   public static storeAccount(nickname: string, password: string): void {
     if (!this._account) {
@@ -110,9 +122,10 @@ export default class LTOService {
   public static async anchor(...anchors: Array<{key: Binary, value: Binary}>|Array<Binary>): Promise<void> {
     if (anchors[0] instanceof Uint8Array) {
       await lto.anchor(this.account, ...anchors as Array<Binary>);
-    } else {
-      await lto.mappedAnchor(this.account, ...anchors as Array<{key: Binary, value: Binary}>);
-    }
+    } 
+    // else {
+    //   await lto.mappedAnchor(this.account, ...anchors as Array<{key: Binary, value: Binary}>);
+    // }
   }
 
   public static async verifyAnchors(...anchors: Array<{key: Binary, value: Binary}>|Array<Binary>): Promise<any> {
